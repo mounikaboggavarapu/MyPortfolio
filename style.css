@@ -177,6 +177,21 @@ section {
   width: 400px;
   margin: auto 0;
 }
+.section__pic-container1 {
+  width: 400px; /* Adjust this size as needed */
+  height: 400px;
+  border-radius: 50%; /* Makes the container circular */
+  overflow: hidden; /* Hides overflow to keep the circular shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc; /* Optional border for visibility */
+}
+.section__pic-container1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the container proportionally */
+}
 
 .section__text {
   align-self: center;
@@ -317,8 +332,65 @@ section {
 }
 
 /* EXPERIENCE SECTION */
+.experience-details-container {
+  display: flex;
+  flex-wrap: wrap; /* Enables wrapping */
+  gap: 1.5rem; /* Adds spacing between cards */
+  justify-content: space-between; /* Spreads cards evenly in the row */
+}
 
-#experience {
+.work-experience-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 16px; /* Soft rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: calc(50% - 1.5rem); /* Ensures two cards fit per row */
+  text-align: center;
+  position: relative;
+  box-sizing: border-box; /* Ensures padding and borders are included in the width */
+}
+
+.work-experience-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.work-experience-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.more-text {
+  display: none; /* Initially hidden */
+}
+
+.show-more-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.show-more-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Force Cards to Stack Vertically on Smaller Screens */
+@media screen and (max-width: 768px) {
+  .work-experience-card {
+    width: 100%; /* Takes full width on smaller screens */
+  }
+}
+
+
+/*#experience {
   position: relative;
   height: auto;
 }
@@ -358,7 +430,7 @@ article .icon {
   cursor: default;
 }
 
-/* ACHIEVEMENTS SECTION */
+ACHIEVEMENTS SECTION */
 
 #achievement {
   position: relative; /* This ensures the section is positioned relative to its normal position */
@@ -372,8 +444,8 @@ article .icon {
 
 .project-img {
   border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
 }
 
 .project-title {
